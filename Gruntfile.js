@@ -25,7 +25,7 @@ module.exports = function(grunt) {
           '{.tmp,<%= project.app %>}/scripts/{,*/}*.js',
           '<%= project.app %>/img/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ],
-        tasks: ['livereload', 'compass']
+        tasks: ['livereload','jshint:all']
 
       }
     },
@@ -57,6 +57,17 @@ module.exports = function(grunt) {
         }
       }
     },
+    // Make sure code styles are up to par and there are no obvious mistakes
+    jshint: {
+      options: {
+        jshintrc: '.jshintrc',
+        reporter: require('jshint-stylish')
+      },
+      all: [
+        'Gruntfile.js',
+        '<%= project.app %>/script/{,*/}*.js'
+      ]
+    },
     open: {
       server: {
         url: 'http://localhost:<%= connect.options.port %>'
@@ -66,6 +77,7 @@ module.exports = function(grunt) {
 
 
   grunt.registerTask('server', [
+    'jshint',
     'livereload-start',
     'connect:livereload',
     'open',

@@ -4,6 +4,8 @@
  * @Class Utils
  * Class implemented with the module pattern
  * This class defines the core used by the main class (provides core functionallity)
+ *
+ * @author: Sebastian Battistelli - sebastianbattistelli@gmail.com
  * ======================================================== */
 var Utils = (function() {
   /**
@@ -42,10 +44,14 @@ var Utils = (function() {
   };
   /**
     @method _getTemplate - This method is used to get the template object
+    @params {String} fileUrl - template url
+            {function} callback - default function used as callback
     @private
-  **/
-  var _getTemplate = function(file, callback) {
-    var url = urlConst.template + file;
+
+    @NOTE: this jquery method $.get() requires to be run in server 
+   **/
+  var _getTemplate = function(fileUrl, callback) {
+    var url = urlConst.template + fileUrl;
 
     $.get(url, function(templates) {
       callback(templates);
@@ -68,10 +74,12 @@ var Utils = (function() {
  * @Class EtsySearch
  * Class implemented with the module pattern
  * This class defines the main methods needed by the ETSY API.
+ *
+ * @author: Sebastian Battistelli - sebastianbattistelli@gmail.com
  * ======================================================== */
 var EtsySearch = (function() {
   /**
-    @params {Object} listingStates - ???
+    @params {String} listingStates - configure url params
     @method _getUrlEtsySearch - This method is used to get url configured ready to fetch data
     @private
   **/
@@ -81,8 +89,8 @@ var EtsySearch = (function() {
     return url.replace('{listingStates}', listingStates).replace('{key}', EtsyAPI.key);
   };
   /**
-    @params {Object} listingStates - ???
-    @params {Object} itemId - the selected item id which will be favorited
+    @params {String} listingStates - configure url params
+    @params {Integer} itemId - the selected item id
     @method _getUrlEtsyFavorites - This method is used to get url configured ready to add an item as favorite
     @private
   **/
@@ -92,7 +100,7 @@ var EtsySearch = (function() {
     return url.replace('{listingStates}', listingStates).replace('{key}', EtsyAPI.key).replace('{idItem}', itemId);
   };
   /**
-    @params {Object} options - ???
+    @params {Object} options - configure url params
     @params {Object} callback - method used to render the data after the request is successed
     @method _search - This method is used to make a request (GET) by ajax to the ETSY API
     @private
@@ -121,6 +129,14 @@ var EtsySearch = (function() {
     }
   };
 
+  /**
+    @params {Integer} itemId - the selected item id
+    @method _addToFavorites - This method is used in order to call the service for add item to favorite list
+    @private
+    *
+    *@NOTE: This functionallity was not implemente because the API requires too much information to be used 
+    *       and I did not got the needed data by now.
+  **/
   var _addToFavorites = function(idItem) {
 
     var url = _getUrlEtsyFavorites('active', idItem);

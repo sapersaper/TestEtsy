@@ -4,6 +4,8 @@
  * @Class App
  * Class implemented with the module pattern
  * This class defines the main module in order to make the app work.
+ *
+ * @author: Sebastian Battistelli - sebastianbattistelli@gmail.com
  * ======================================================== */
 var App = (function() {
   return {
@@ -109,7 +111,7 @@ var App = (function() {
       $elItem.find('.item-more-info').toggle();
     },
     /**
-      @method viewMoreHandler - This method is used to hide the removed events from the results when the page is refreshed
+      @method hideItemsDeleted - This method is used to hide the removed events from the results when the page is refreshed
     **/
     hideItemsDeleted: function() {
       $.each(localStorage, function(key, val) {

@@ -30,4 +30,4 @@ Note: Every method has its own documentation on top to be more clear of what's i
 It's compatible with IE9+, Chrome, FF, Safari
 
 @Author:
-Sebastian Battistelli - sebastianbattistelli@gmail.ccom
+Sebastian Battistelli - sebastianbattistelli@gmail.com

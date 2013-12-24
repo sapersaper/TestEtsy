@@ -1,0 +1,22 @@
+{{#results}}
+  <div class="item" id="item_{{listing_id}}">
+    <div class="item-info">
+      <img class="item-img" height="135" width="170" src="{{Images.0.url_170x135}}">
+       <a class="js-remove-item icon-close remove-item" href="#" data-ListingId="{{listing_id}}" title="remove Item"></a>
+      <h2 class="item-title">{{title}}</h2>
+      <p class="item-price">{{price}} {{currency_code}}</p>
+      <div class="item-icons">
+        <a class="item-description icon-link" href="{{url}}" target="_blank" title="Go to the product page"></a>
+        <a class="js-add-favorite item-favorite icon-heart" href="#" data-ListingId="{{listing_id}}" title="Add to favorite" ></a>
+        <a class="js-view-more-item icon-plus" href="#" data-ListingId="{{listing_id}}" title="view more information"></a>
+      </div>
+    </div>
+    <div class="item-more-info">
+      {{#Images}}
+      <img class="item-img" height="135" width="170" src="{{url_170x135}}">
+      {{/Images}}
+      <div class="item-description">{{description}}</div>
+    </div>
+  </div>
+{{/results}}
+

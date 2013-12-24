@@ -126,11 +126,13 @@ body {
 	color: #888;
 }
 
-.js-not-match {
+.not-match {
 	display: none;
 	position: absolute;
-	top: 70px;
-	left: 30%;
+	top: 85px;
+	left: 34%;
+	font-weight: bold;
+	font-size: 20px;
 }
 
 .content-items {

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="search-nav">
+      <a href="https://www.etsy.com/es/?ref=si_home" class="nav-logo"></a>
+      <input  class ="js-search-txt search-txt" placeholder="Search" type="text"/>
+      <a class ="js-search-btn search-btn" href="#">search</a>
+      <select class ="js-orderSelect select-order">
+        <option value="created">created</option>
+        <option value="price">price</option>
+        <option value="score">score</option>
+      </select>
+    </div>
+  </header>
+  <div class="js-itemTemplate content-items"></div>
+  <div class="loader js-loader"></div>
+  <div class="not-match js-not-match">Not Found Results</div>
+
+  <script type="text/javascript" src="vendor/jquery-v1.10.2.min.js"></script>
+  <script type="text/javascript" src="vendor/handlebars-v1.1.2.min.js"></script>
+  <script type="text/javascript" src="script/config.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+  <script type="text/javascript" src="script/utils.js"></script>
+  
+</body>
+</html>

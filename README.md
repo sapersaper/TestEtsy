@@ -19,9 +19,9 @@ Note: Please contact me if you are in troubles running the grunt server.
 
 In order to show the javascript level, I decided to make a simple framework-oriented approach. This is why I developed an util.js file which handles every object inside the main.js file.
 
-This approach is based on backbone.js which is a framework that I have used for at least 1 year. There's an object called ui which is the responsible of get the jquery object of every selectors used in the DOM. 
+This approach is based on backbone.js which is the framework that I have used for at least 1 year. There's an object called ui which is the responsible of get the jquery object of every selectors used in the DOM. 
 
-I also defined an events object which match an <event> <selector>: <method> so we have an object that handles every methods inside the global.
+I also defined an events object which match an [event] [selector] : [method] so we have an object that handles every methods inside the main app.
 
 Note: Every method has its own documentation on top to be more clear of what's intended to do.
 

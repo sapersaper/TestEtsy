@@ -61,7 +61,7 @@ var App = (function() {
     **/
     addFavoritesHandler: function(e) {
       e.preventDefault();
-      $el = $(e.currentTarget);
+      var $el = $(e.currentTarget);
 
       EtsySearch.addToFavorites($el.data().listingid);
     },
